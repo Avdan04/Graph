@@ -1,15 +1,11 @@
-cmake_minimum_required(VERSION 3.27)
+cmake_minimum_required(VERSION 3.10)
 project(Graph)
 
-set(CMAKE_CXX_STANDARD 23)
+# Укажите стандарт C++.
+set(CMAKE_CXX_STANDARD 17)
 
-# Указываем путь к заголовочным файлам вашего репозитория
-include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+# Создайте библиотеку вместо исполняемого файла.
+# Используйте 'SHARED' для динамической библиотеки или 'STATIC' для статической.
+add_library(Graph STATIC graph.cpp graph.h)
 
-# Добавляем все исходные файлы в список SOURCES
-set(SOURCES
-    graph.hpp
-)
 
-# Создаем статическую библиотеку
-add_library(Graph STATIC ${SOURCES})
