@@ -5,8 +5,10 @@ set(CMAKE_CXX_STANDARD 23)
 
 # Указываем исходные файлы вашей библиотеки
 set(SOURCES
-    graph.h
     graph.hpp
 )
+
+# Создаем статическую библиотеку
+add_library(Graph STATIC ${SOURCES})
 
 
